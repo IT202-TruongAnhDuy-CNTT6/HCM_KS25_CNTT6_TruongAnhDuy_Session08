@@ -61,3 +61,11 @@ SELECT title, author_name,
         ELSE 'Không xác định trạng thái'
 	END AS status_name 
 FROM Book;
+SELECT title, price, category_name
+FROM Book b
+INNER JOIN Category c
+ON b.category_id = c.category_id;
+SELECT *
+FROM Book
+ORDER BY price DESC
+LIMIT 2;
