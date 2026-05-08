@@ -69,3 +69,20 @@ SELECT *
 FROM Book
 ORDER BY price DESC
 LIMIT 2;
+SELECT c.category_name, COUNT(b.title) AS book_count
+FROM Category c, Book b
+WHERE c.category_id = b.category_id
+GROUP BY c.category_name
+HAVING COUNT(b.title) >= 2;
+SELECT *
+FROM Book
+WHERE price > (
+	SELECT AVG(price)
+    FROM Book
+);
+SELECT *
+FROM Book
+WHERE book_id IN (
+    SELECT book_id
+    FROM BookOrder
+);
