@@ -58,6 +58,6 @@ SELECT title, author_name,
 	CASE `status`
 		WHEN 1 THEN 'Còn hàng'
         WHEN 0 THEN 'Hết hàng'
-        ELSE 'Không xác định được trạng thái'
+        ELSE 'Không xác định trạng thái'
 	END AS status_name 
 FROM Book;
